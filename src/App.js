@@ -39,11 +39,19 @@ function App() {
       price: 44,
     },
   ];
-
-  const Deseos = (index) => {
-    state.push(initial[index]);
+  const Elimina = (index) => {
+    const tempProduct = [...state];
+    tempProduct.splice(index, 1);
+    setState(tempProduct);
   };
-
+  const Deseos = (index) => {
+    
+// eslint-disable-next-line no-lone-blocks
+{state.includes(initial[index]) ? null :
+    state.push(initial[index])}
+  
+  };
+console.log(state)
   return (
     <Router>
       <aside>
@@ -56,7 +64,7 @@ function App() {
           element={<Inventario inicial={initial} deseo={Deseos} />}
         />
         <Route path="*" element={<NotFoundPage />} />
-        <Route path="/WhishList" element={<WhishList Data={state} />} />
+        <Route path="/WhishList" element={<WhishList Data={state} elimina={Elimina} />} />
       </Routes>
     </Router>
   );

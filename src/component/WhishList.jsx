@@ -1,18 +1,12 @@
 import React, { useState } from "react";
 
-const WhishList = ({ Data }) => {
-  const [state, setState] = useState(Data);
-  const elimina = (index) => {
-    const tempProduct = [...state];
-    tempProduct.splice(index, 1);
-    setState(tempProduct);
-  };
-
+const WhishList = ({ Data,elimina }) => {
+  
   return (
     <div>
       <h1>⭐WhisList⭐</h1>
       <div className="contenedor">
-        {state.map((item, index) => {
+        {Data.map((item, index) => {
           return (
             <>
               <div className="card">
