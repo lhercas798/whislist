@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-expressions */
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Inventario from "./component/inventario";
@@ -7,7 +7,7 @@ import NotFoundPage from "./component/404/NotFoundPage.jsx";
 import WhishList from "./component/WhishList";
 
 function App() {
-  const [state, setState] = useState([]);
+  
 
   const initial = [
     {
@@ -16,6 +16,7 @@ function App() {
       stock: false,
       imagen: "adidas2.jpeg",
       price: 34,
+      whish:false
     },
     {
       name: "Nike model b",
@@ -23,6 +24,7 @@ function App() {
       stock: true,
       imagen: "nike2.jpeg",
       price: 44,
+      whish:false
     },
     {
       name: "Adidas Speed",
@@ -30,6 +32,7 @@ function App() {
       stock: true,
       imagen: "adidas.jpeg",
       price: 48,
+      whish:false
     },
     {
       name: "Nike ",
@@ -37,8 +40,13 @@ function App() {
       stock: true,
       imagen: "nike.jpeg",
       price: 44,
+      whish:false
     },
   ];
+  
+  const [state, setState] = useState([]);
+  const [shoes, setShoes] = useState(initial);
+
   const Elimina = (index) => {
     const tempProduct = [...state];
     tempProduct.splice(index, 1);
@@ -47,9 +55,9 @@ function App() {
   const Deseos = (index) => {
     
 // eslint-disable-next-line no-lone-blocks
-{state.includes(initial[index]) ? null :
+{state.includes(shoes[index]) ? null :
     state.push(initial[index])}
-  
+   
   };
 console.log(state)
   return (
@@ -61,8 +69,7 @@ console.log(state)
       <Routes>
         <Route
           path="/"
-          element={<Inventario inicial={initial} deseo={Deseos} />}
-        />
+          element={<Inventario inicial={shoes} deseo={Deseos} />}/>
         <Route path="*" element={<NotFoundPage />} />
         <Route path="/WhishList" element={<WhishList Data={state} elimina={Elimina} />} />
       </Routes>

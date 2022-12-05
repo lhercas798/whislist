@@ -70,7 +70,22 @@ img {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   
 }
+.whish{
+  display: grid;
+grid-template-columns:  auto ;
+border-radius: 5px;
+box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+transition: 0.3s;
+width: 500px;
+margin-top: 10px;
+}
+button:hover {
+background-color: bisque;
 
+}
+button:active {
+  background-color: rgb(131, 69, 239);
+}
 .container {
   padding: 2px 16px;
 
@@ -79,12 +94,6 @@ img {
   body {
     background-color: #ffffff;
   }
-  contenedor{
-    display: grid;
-    grid-template-columns: 15px ;
-    grid-gap:2px ;
-    text-align: center;
-    padding: 20px 0;
-    font-size: 9px;
-  }
+  
+ 
 }
