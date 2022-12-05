@@ -1,7 +1,6 @@
 import React from "react";
 
-const WhishList = ({ Data,elimina }) => {
-  
+const WhishList = ({ Data, elimina }) => {
   return (
     <div>
       <h1>⭐WhisList⭐</h1>
@@ -19,9 +18,9 @@ const WhishList = ({ Data,elimina }) => {
                 <div className="container">
                   <h2>{item.name}</h2>
                   {/* <h2>Description: {item.description}</h2> */}
-                  
+
                   <h3>Price: {item.price} eu</h3>
-                  <button onClick={() => elimina(item,index)}>
+                  <button onClick={() => elimina(item, index)}>
                     {"🗑️Remove"}
                   </button>
                 </div>
