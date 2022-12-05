@@ -56,7 +56,7 @@ function App() {
     
 // eslint-disable-next-line no-lone-blocks
 {state.includes(shoes[index]) ? null :
-    state.push(initial[index])}
+    state.push(shoes[index])}
    
   };
 console.log(state)

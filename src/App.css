@@ -44,6 +44,7 @@ img {
 }
 
 .contenedor{
+  background-image: '/public/img/7.jpg';
   display:flex;
  
   width: 95%;
@@ -56,6 +57,7 @@ img {
   font-size: 9px;
 }
 .card {
+  background-image: '/public/img/7.jpg';
   display: grid;
   grid-template-columns: auto auto ;
   border-radius: 5px;
@@ -90,10 +92,18 @@ button:active {
   padding: 2px 16px;
 
 }
+body{
+  width: 100%;
+  background-image: '/public/img/7.jpg';
+  background-size: contain;  
+}
+.body {
+  width: 100%;
+  background-image: '/public/img/7.jpg';
+  background-size: cover;
+}
 @media only screen and (max-width: 600px) {
-  body {
-    background-color: #ffffff;
-  }
+  
   
  
 }
