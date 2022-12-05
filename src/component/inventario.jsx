@@ -15,8 +15,12 @@ const Inventario = ({ inicial, deseo, elimina }) => {
               <h3>Stock: {item.stock ? "yes" : "No"}</h3>
               <h3>Price: {item.price} eu</h3>
 
-              <button onClick={() => deseo(index)}>
-                {"💝Add to Whishlist"}
+              <button
+                onClick={
+                  item.whish ? () => elimina(item, index) : () => deseo(index)
+                }
+              >
+                {item.whish ? "🖤 Remove" : "💝Add to Whishlist"}
               </button>
             </div>
           </div>

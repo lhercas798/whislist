@@ -53,12 +53,18 @@ function App() {
     const tempProduct = [...state];
     tempProduct.splice(index, 1);
     setState(tempProduct);
+    let index2 = shoes.indexOf(item);
+    shoes[index2].whish = false;
+    setShoes([...shoes]);
+  };
+  const Elimina2 = (item) => {
+    const tempProduct = [...state];
+    let index=state.indexOf(item)
+    tempProduct.splice(index, 1);
     setState(tempProduct);
     let index2 = shoes.indexOf(item);
     shoes[index2].whish = false;
     setShoes([...shoes]);
-    setShoes([...shoes]);
-    
   };
   const Deseos = (index) => {
     // eslint-disable-next-line no-lone-blocks
@@ -68,9 +74,7 @@ function App() {
   };
   function Add(index) {
     shoes[index].whish = true;
-    shoes[index].whish = true;
     state.push(shoes[index]);
-    setShoes([...shoes])
     setShoes([...shoes]);
   }
   console.log(state);
@@ -84,7 +88,7 @@ function App() {
         <Route
           path="/"
           element={
-            <Inventario inicial={shoes} deseo={Deseos} elimina={Elimina} />
+            <Inventario inicial={shoes} deseo={Deseos} elimina={Elimina2} />
           }
         />
         <Route path="*" element={<NotFoundPage />} />
