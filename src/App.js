@@ -11,6 +11,7 @@ function App() {
 
   const initial = [
     {
+      id:1,
       name: "Adidas Running",
       description: "running shoes",
       stock: false,
@@ -19,6 +20,7 @@ function App() {
       whish:false
     },
     {
+      id:2,
       name: "Nike model b",
       description: "running shoes",
       stock: true,
@@ -27,6 +29,7 @@ function App() {
       whish:false
     },
     {
+      id:3,
       name: "Adidas Speed",
       description: "running shoes",
       stock: true,
@@ -35,6 +38,7 @@ function App() {
       whish:false
     },
     {
+      id:4,
       name: "Nike ",
       description: "running shoes",
       stock: true,
@@ -47,7 +51,10 @@ function App() {
   const [state, setState] = useState([]);
   const [shoes, setShoes] = useState(initial);
 
-  const Elimina = (index) => {
+  const Elimina = (item,index) => {
+    let index2=shoes.indexOf(item)
+    shoes[index2].whish=false
+    setShoes([...shoes])
     const tempProduct = [...state];
     tempProduct.splice(index, 1);
     setState(tempProduct);
@@ -56,9 +63,14 @@ function App() {
     
 // eslint-disable-next-line no-lone-blocks
 {state.includes(shoes[index]) ? null :
-    state.push(shoes[index])}
+    Add(index)}
    
   };
+  function Add(index){
+    shoes[index].whish=true
+    state.push(shoes[index])
+    setShoes([...shoes])
+  }
 console.log(state)
   return (
     <Router>
@@ -69,7 +81,7 @@ console.log(state)
       <Routes>
         <Route
           path="/"
-          element={<Inventario inicial={shoes} deseo={Deseos} />}/>
+          element={<Inventario inicial={shoes} deseo={Deseos}elimina={Elimina} />}/>
         <Route path="*" element={<NotFoundPage />} />
         <Route path="/WhishList" element={<WhishList Data={state} elimina={Elimina} />} />
       </Routes>
