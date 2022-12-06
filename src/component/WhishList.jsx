@@ -8,7 +8,7 @@ const WhishList = ({ Data, elimina }) => {
         {Data.map((item, index) => {
           return (
             <>
-              <div className="card">
+              <div className="card-w">
                 <img
                   style={{ width: "100px", height: "100px" }}
                   src={`/img/${item.imagen}`}

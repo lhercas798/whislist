@@ -73,7 +73,19 @@ body {
   /* background-image: url('/public/img/whish.jpg'); */
   background-color:rgba(62, 3, 3, 0.2);
 }
-
+.card-w {
+  color: rgb(255, 255, 255);
+  display: grid;
+  grid-template-columns: auto auto ;
+  border-radius: 8px;
+  box-shadow: 0 5px 9px 0 rgba(0,0,0,0.9);
+  transition: 0.3s;
+  width: 300px;
+  
+  margin-top: 10px;
+  /* background-image: url('/public/img/whish.jpg'); */
+  background-color:rgba(62, 3, 3, 0.2);
+}
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
   
