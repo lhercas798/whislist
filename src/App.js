@@ -85,16 +85,16 @@ function App() {
         <span style={{ fontFamily: "sans-serif", fontSize: "30px" }}>
           Feliz 2023
         </span>
-        <Link to="/" style={{ fontFamily: "sans-serif", fontSize: "30px" }}>
+        <Link to="/" style={{ fontFamily: "sans-serif", fontSize: "20px" }}>
           ||HOME|
         </Link>
         <Link
           to="WhishList"
-          style={{ fontFamily: "sans-serif", fontSize: "30px" }}
+          style={{ fontFamily: "sans-serif", fontSize: "20px" }}
         >
           |WhishList|
         </Link>
-        <Link to="About" style={{ fontFamily: "sans-serif", fontSize: "30px" }}>
+        <Link to="About" style={{ fontFamily: "sans-serif", fontSize: "20px" }}>
           |About||
         </Link>
       </aside>
