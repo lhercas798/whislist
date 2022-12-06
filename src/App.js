@@ -81,8 +81,9 @@ function App() {
   return (
     <Router>
       <aside>
-        <Link to="/">|HOME|</Link>
-        <Link to="WhishList">|WhishList|</Link>
+      <span style={{fontFamily:"sans-serif",  fontSize:'30px'}}>Feliz 2023</span>
+        <Link to="/" style={{fontFamily:"sans-serif",  fontSize:'30px'}}>||HOME||</Link>
+        <Link to="WhishList"style={{fontFamily:"sans-serif",  fontSize:'30px'}}>||WhishList||</Link>
       </aside>
       <Routes>
         <Route

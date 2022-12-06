@@ -4,7 +4,7 @@ const WhishList = ({ Data, elimina }) => {
   return (
     <div>
       <h1>⭐WhisList⭐</h1>
-      <div className="contenedor">
+      <div style={{minHeight:'300px'}}className="contenedor">
         {Data.map((item, index) => {
           return (
             <>

@@ -38,14 +38,18 @@
   }
 }
 img {
-
-  width: 100%;
+border-radius: 10px;
+  width: 200px;
   height:100% ;
 }
-
+body {
+  background-color: rgb(255, 227, 209);
+}
 .contenedor{
-  background-image: '/public/img/7.jpg';
+  background-image: url('/public/img/nieve.gif');
+  background-size: auto;
   display:flex;
+  
  
   width: 95%;
   justify-content: space-around;
@@ -53,19 +57,21 @@ img {
   flex-wrap:wrap;
   text-align: center;
  
-  padding: 20px 0;
-  font-size: 9px;
+  padding: 10px 10px;
+  font-size: 10px;
 }
 .card {
-  background-image: '/public/img/7.jpg';
+  color: rgb(255, 255, 255);
   display: grid;
   grid-template-columns: auto auto ;
   border-radius: 5px;
-  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  box-shadow: 0 5px 9px 0 rgba(0,0,0,0.9);
   transition: 0.3s;
   width: 300px;
+  max-height: 470px;
   margin-top: 10px;
- 
+  /* background-image: url('/public/img/whish.jpg'); */
+  background-color:rgba(62, 3, 3, 0.2);
 }
 
 .card:hover {
@@ -81,9 +87,13 @@ transition: 0.3s;
 width: 500px;
 margin-top: 10px;
 }
+button {
+  border-radius: 5px;
+}
+
 button:hover {
 background-color: bisque;
-
+border-radius: 5px;
 }
 button:active {
   background-color: rgb(131, 69, 239);
@@ -92,16 +102,8 @@ button:active {
   padding: 2px 16px;
 
 }
-body{
-  width: 100%;
-  background-image: '/public/img/7.jpg';
-  background-size: contain;  
-}
-.body {
-  width: 100%;
-  background-image: '/public/img/7.jpg';
-  background-size: cover;
-}
+
+
 @media only screen and (max-width: 600px) {
   
   
