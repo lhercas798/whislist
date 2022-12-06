@@ -68,7 +68,7 @@ body {
   box-shadow: 0 5px 9px 0 rgba(0,0,0,0.9);
   transition: 0.3s;
   width: 300px;
-  max-height: 470px;
+  min-height: 440px;
   margin-top: 10px;
   /* background-image: url('/public/img/whish.jpg'); */
   background-color:rgba(62, 3, 3, 0.2);
