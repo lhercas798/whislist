@@ -1,10 +1,11 @@
 /* eslint-disable no-unused-expressions */
-import React, { useState, useEffect } from "react";
+import React, { useState} from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Inventario from "./component/inventario";
 import NotFoundPage from "./component/404/NotFoundPage.jsx";
 import WhishList from "./component/WhishList";
+import About from "./component/about/About";
 
 function App() {
   const initial = [
@@ -59,7 +60,7 @@ function App() {
   };
   const Elimina2 = (item) => {
     const tempProduct = [...state];
-    let index=state.indexOf(item)
+    let index = state.indexOf(item);
     tempProduct.splice(index, 1);
     setState(tempProduct);
     let index2 = shoes.indexOf(item);
@@ -81,9 +82,21 @@ function App() {
   return (
     <Router>
       <aside>
-      <span style={{fontFamily:"sans-serif",  fontSize:'30px'}}>Feliz 2023</span>
-        <Link to="/" style={{fontFamily:"sans-serif",  fontSize:'30px'}}>||HOME||</Link>
-        <Link to="WhishList"style={{fontFamily:"sans-serif",  fontSize:'30px'}}>||WhishList||</Link>
+        <span style={{ fontFamily: "sans-serif", fontSize: "30px" }}>
+          Feliz 2023
+        </span>
+        <Link to="/" style={{ fontFamily: "sans-serif", fontSize: "30px" }}>
+          ||HOME|
+        </Link>
+        <Link
+          to="WhishList"
+          style={{ fontFamily: "sans-serif", fontSize: "30px" }}
+        >
+          |WhishList|
+        </Link>
+        <Link to="About" style={{ fontFamily: "sans-serif", fontSize: "30px" }}>
+          |About||
+        </Link>
       </aside>
       <Routes>
         <Route
@@ -97,6 +110,7 @@ function App() {
           path="/WhishList"
           element={<WhishList Data={state} elimina={Elimina} />}
         />
+        <Route path="/About" element={<About />} />
       </Routes>
     </Router>
   );
