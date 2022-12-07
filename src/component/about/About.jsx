@@ -5,7 +5,7 @@ const About = () => {
     <div>
       <span>
         Soy Reservista de la Armada Española, desde que cuento con algo mas de
-        tiempo. Estudie varios cursos, y este de programación y desarrolo web,
+        tiempo. He realizado varios cursos, y éste de programación y desarrollo web,
         me ha encantado.
       </span>
       <h3>
