@@ -1,11 +1,12 @@
 /* eslint-disable no-unused-expressions */
-import React, { useState} from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Route, Routes, Link } from "react-router-dom";
 import Inventario from "./component/inventario";
 import NotFoundPage from "./component/404/NotFoundPage.jsx";
 import WhishList from "./component/WhishList";
 import About from "./component/about/About";
+import { Countdown } from "./component/about/Count";
 
 function App() {
   const initial = [

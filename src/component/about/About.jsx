@@ -1,7 +1,8 @@
 import React from "react";
 import img from "./Martin.png";
+import { Countdown } from "./Count";
 const About = () => {
-  return (
+   return (
     <div>
       <span>
         Soy Reservista de la Armada Española, desde que cuento con algo mas de
@@ -24,7 +25,13 @@ const About = () => {
         alt="instructor"
       />
       <h3>Instructor Martín San José</h3>
+   <div>
+    <Countdown/>
+    <h2>Para el Nuevo Año</h2>
+   </div>
+   
     </div>
+   
   );
 };
 
