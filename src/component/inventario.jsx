@@ -7,9 +7,9 @@ const Inventario = ({ inicial, deseo, elimina }) => {
         return (
           <div key={index} className="card">
             <img src={`/img/${item.imagen}`} alt="" />
-            <span onClick={
+            <span className='icono'onClick={
                   item.whish ? () => elimina(item, index) : () => deseo(index)
-                } style={{ fontSize: "30px",cursor:'pointer' }}>{item.whish ? "💝" : "🖤"}</span>
+                }>{item.whish ? "💝" : "🖤"}</span>
             <div className="container">
               <h1>🎁Felices Fiestas🎁</h1>
               <h1>{item.name}</h1>
