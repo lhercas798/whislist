@@ -6,7 +6,7 @@ import Inventario from "./component/inventario";
 import NotFoundPage from "./component/404/NotFoundPage.jsx";
 import WhishList from "./component/WhishList";
 import About from "./component/about/About";
-import { Countdown } from "./component/about/Count";
+
 
 function App() {
   const initial = [
