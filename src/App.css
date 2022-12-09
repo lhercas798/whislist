@@ -126,6 +126,27 @@ button:active {
   border-radius: 5px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
-
+.carrito {
+  font-size: 35px;
+  margin-left: auto;
+  
+  justify-content: right;
+}
+.Feliz {
+  font-family: fantasy;
+  font-size: 50px;
+  
+    
+  }
 @media only screen and (max-width: 600px) {
+
+.about {
+  display: none;
+}
+.Feliz {
+font-family: fantasy;
+font-size: 50px;
+display: none;
+  
+}
 }

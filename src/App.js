@@ -83,7 +83,7 @@ function App() {
   return (
     <Router>
       <aside>
-        <span style={{ fontFamily: "sans-serif", fontSize: "30px" }}>
+        <span className="Feliz" >
           Feliz 2023
         </span>
         <Link to="/" style={{ fontFamily: "sans-serif", fontSize: "20px" }}>
@@ -95,9 +95,10 @@ function App() {
         >
           |WhishList|
         </Link>
-        <Link to="About" style={{ fontFamily: "sans-serif", fontSize: "20px" }}>
+        <Link className="about" to="About" style={{ fontFamily: "sans-serif", fontSize: "20px" }}>
           |About||
         </Link>
+        <Link className="carrito">🛒</Link>
       </aside>
       <Routes>
         <Route
