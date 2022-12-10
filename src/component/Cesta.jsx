@@ -1,6 +1,6 @@
 import React from "react";
 
-const Cesta = ({ DatosCompra }) => {
+const Cesta = ({ DatosCompra,rest,Add,eliminacesta }) => {
  
  
 
@@ -24,10 +24,10 @@ const Cesta = ({ DatosCompra }) => {
                 src={`/img/${item.imagen}`}
                 alt=""
               />
-              <span> Units: {item.items}</span>
               <span> Unit price: {item.price} eu </span>
+               Units: <button onClick={()=>rest(item)}><div>-</div></button><button>{item.items}</button><button onClick={()=>Add(item)}><div > + </div></button>
               <span> to Pay : {num} eu</span>
-              
+              <button onClick={()=>eliminacesta(item,index)}><div > 🗑️ </div></button>
             </div>
           );
         })}

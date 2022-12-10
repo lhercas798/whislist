@@ -15,7 +15,7 @@ function App() {
       id: 1,
       name: "Adidas Running",
       description: "running shoes",
-      items:1,
+      items:0,
       stock: false,
       imagen: "adidas2.jpeg",
       price: 34,
@@ -25,7 +25,7 @@ function App() {
       id: 2,
       name: "Nike model b",
       description: "running shoes",
-      items :1,
+      items :0,
       stock: true,
       imagen: "nike2.jpeg",
       price: 44,
@@ -35,7 +35,7 @@ function App() {
       id: 3,
       name: "Adidas Speed",
       description: "running shoes",
-      items:1,
+      items:0,
       stock: true,
       imagen: "adidas.jpeg",
       price: 48,
@@ -45,7 +45,7 @@ function App() {
       id: 4,
       name: "Nike ",
       description: "running shoes",
-      items:1,
+      items:0,
       stock: true,
       imagen: "nike.jpeg",
       price: 44,
@@ -85,6 +85,11 @@ function App() {
     state.push(shoes[index]);
     setShoes([...shoes]);
   }
+  /**
+   * 
+   * Funciones para Carrito 
+   *  
+   */
   const AddToBuy = (item,index) => {
    
     {
@@ -99,11 +104,28 @@ function App() {
 
 setCesta([...cesta]);
   }
+  function RestItems(item,index){
+    const index2= cesta.indexOf(item)
+   if(cesta[index2].items>0) {cesta[index2].items -- ;} else
+    {EliminaCesta(item,index) ;} 
+
+setCesta([...cesta]);
+  }
   function AddCesta(index) {
     
     cesta.push(shoes[index]);
-    // setTempCesta([...cesta]);
+    cesta[index].items++
+    setCesta([...cesta]);
   }
+  const EliminaCesta = (item, index) => {
+    const tempCesta = [...cesta];
+    let index2 = cesta.indexOf(item);
+    cesta[index2].items = 0;
+    setCesta([tempCesta]);
+    tempCesta.splice(index, 1);
+    setCesta(tempCesta);
+    
+  };
   let num=15;
   return (
     <Router>
@@ -135,7 +157,7 @@ setCesta([...cesta]);
         <Route path="*" element={<NotFoundPage />} />
         <Route
           path="/Compra"
-          element={<Cesta DatosCompra={cesta} />}
+          element={<Cesta DatosCompra={cesta} rest={RestItems} Add={AddItems} eliminacesta={EliminaCesta}/>}
         />
         <Route
           path="/WhishList"
