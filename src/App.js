@@ -7,7 +7,7 @@ import Inventario from "./component/inventario";
 import NotFoundPage from "./component/404/NotFoundPage.jsx";
 import WhishList from "./component/WhishList";
 import About from "./component/about/About";
-import  Cesta  from "./component/Cesta";
+import Cesta from "./component/Cesta";
 
 function App() {
   const initial = [
@@ -15,7 +15,7 @@ function App() {
       id: 1,
       name: "Adidas Running",
       description: "running shoes",
-      items:0,
+      items: 0,
       stock: false,
       imagen: "adidas2.jpeg",
       price: 34,
@@ -25,7 +25,7 @@ function App() {
       id: 2,
       name: "Nike model b",
       description: "running shoes",
-      items :0,
+      items: 0,
       stock: true,
       imagen: "nike2.jpeg",
       price: 44,
@@ -35,7 +35,7 @@ function App() {
       id: 3,
       name: "Adidas Speed",
       description: "running shoes",
-      items:0,
+      items: 0,
       stock: true,
       imagen: "adidas.jpeg",
       price: 48,
@@ -45,7 +45,7 @@ function App() {
       id: 4,
       name: "Nike ",
       description: "running shoes",
-      items:0,
+      items: 0,
       stock: true,
       imagen: "nike.jpeg",
       price: 44,
@@ -86,35 +86,34 @@ function App() {
     setShoes([...shoes]);
   }
   /**
-   * 
-   * Funciones para Carrito 
-   *  
+   *
+   * Funciones para Carrito
+   *
    */
-  const AddToBuy = (item,index) => {
-   
+  const AddToBuy = (item, index) => {
     {
       cesta.includes(shoes[index]) ? AddItems(item) : AddCesta(index);
-     
-    
     }
   };
-  function AddItems(item,index){
-    const index2= cesta.indexOf(item)
-    cesta[index2].items++; 
+  function AddItems(item, index) {
+    const index2 = cesta.indexOf(item);
+    cesta[index2].items++;
 
-setCesta([...cesta]);
+    setCesta([...cesta]);
   }
-  function RestItems(item,index){
-    const index2= cesta.indexOf(item)
-   if(cesta[index2].items>0) {cesta[index2].items -- ;} else
-    {EliminaCesta(item,index) ;} 
-
-setCesta([...cesta]);
+  function RestItems(item, index) {
+    const index2 = cesta.indexOf(item);
+    if (cesta[index2].items > 0) {
+      cesta[index2].items--;
+    } else {
+      EliminaCesta(item, index);
+    }
+    setCesta([...cesta]);
   }
   function AddCesta(index) {
-    
+    shoes[index].items++;
     cesta.push(shoes[index]);
-    cesta[index].items++
+
     setCesta([...cesta]);
   }
   const EliminaCesta = (item, index) => {
@@ -124,40 +123,50 @@ setCesta([...cesta]);
     setCesta([tempCesta]);
     tempCesta.splice(index, 1);
     setCesta(tempCesta);
-    
   };
-  let num=15;
+
+  let num = 4;
+
   return (
     <Router>
       <aside className="aside">
-        <span className="Feliz" >
-          🎁Feliz 2023✨
-        </span>
-        <Link to="/" className='Link'>
+        <span className="Feliz">🎁Feliz 2023✨</span>
+        <Link to="/" className="Link">
           ||HOME|
         </Link>
-        <Link
-          to="WhishList" className="Link"
-          
-        >
+        <Link to="WhishList" className="Link">
           |WhishList|
         </Link>
-        <Link className="about" to="About" >
+        <Link className="about" to="About">
           |About||
         </Link>
-        <Link className="carrito" to="Compra">Cart🛒<span className="miniatura">{num}</span></Link>
+        <Link className="carrito" to="Compra">
+          Cart🛒<span className="miniatura">{num}</span>
+        </Link>
       </aside>
       <Routes>
         <Route
           path="/"
           element={
-            <Inventario inicial={shoes} deseo={Deseos} elimina={Elimina2} addCest={AddToBuy}  />
+            <Inventario
+              inicial={shoes}
+              deseo={Deseos}
+              elimina={Elimina2}
+              addCest={AddToBuy}
+            />
           }
         />
         <Route path="*" element={<NotFoundPage />} />
         <Route
           path="/Compra"
-          element={<Cesta DatosCompra={cesta} rest={RestItems} Add={AddItems} eliminacesta={EliminaCesta}/>}
+          element={
+            <Cesta
+              DatosCompra={cesta}
+              rest={RestItems}
+              Add={AddItems}
+              eliminacesta={EliminaCesta}
+            />
+          }
         />
         <Route
           path="/WhishList"
