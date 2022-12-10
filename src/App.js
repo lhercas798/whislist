@@ -144,7 +144,7 @@ function App() {
           |About||
         </Link>
         <Link className="carrito" to="Compra">
-          Cart🛒<span className="miniatura">{num}</span>
+          Cart🛒<span className="miniatura">{num===0? 0:num}</span>
         </Link>
       </aside>
       <Routes>
