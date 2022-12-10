@@ -31,7 +31,7 @@ const Cesta = ({ DatosCompra,rest,Add,eliminacesta,total }) => {
             </div>
           );
         })}
-        <div>________________________________________________________Total to pay : {total} eu</div>
+        <div>{total>0 ? `________________________________________________________Total to pay : ${total} eu`:'Choose Your Gifth'}</div>
       </div>
     </div>
   );
