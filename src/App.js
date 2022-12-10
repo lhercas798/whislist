@@ -1,3 +1,4 @@
+/* eslint-disable no-use-before-define */
 /* eslint-disable no-lone-blocks */
 /* eslint-disable no-unused-expressions */
 import React, { useState } from "react";
@@ -55,7 +56,6 @@ function App() {
 
   const [state, setState] = useState([]);
   const [shoes, setShoes] = useState(initial);
-  // const [tempCesta,setTempCesta]=useState(initial)
   const [cesta, setCesta] = useState([]);
   const Elimina = (item, index) => {
     const tempProduct = [...state];
@@ -118,14 +118,17 @@ function App() {
   }
   const EliminaCesta = (item, index) => {
     const tempCesta = [...cesta];
-    let index2 = cesta.indexOf(item);
-    cesta[index2].items = 0;
+    let index2 = shoes.indexOf(item);
+    shoes[index2].items = 0;
     setCesta([tempCesta]);
     tempCesta.splice(index, 1);
     setCesta(tempCesta);
   };
 
-  let num = 4;
+  const initialValue = 0;
+  let num = cesta.map(cesta =>cesta.items).reduce( (accumulator, currentValue) => accumulator + currentValue,
+  initialValue)
+  console.log(num)
 
   return (
     <Router>
