@@ -128,7 +128,8 @@ function App() {
   const initialValue = 0;
   let num = cesta.map(cesta =>cesta.items).reduce( (accumulator, currentValue) => accumulator + currentValue,
   initialValue)
-  console.log(num)
+ let Total= cesta.map(cesta=>cesta.items*cesta.price).reduce((accumulator, currentValue) => accumulator + currentValue,
+ initialValue)
 
   return (
     <Router>
@@ -168,6 +169,7 @@ function App() {
               rest={RestItems}
               Add={AddItems}
               eliminacesta={EliminaCesta}
+              total={Total}
             />
           }
         />

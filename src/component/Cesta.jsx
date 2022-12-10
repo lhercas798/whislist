@@ -1,6 +1,6 @@
 import React from "react";
 
-const Cesta = ({ DatosCompra,rest,Add,eliminacesta }) => {
+const Cesta = ({ DatosCompra,rest,Add,eliminacesta,total }) => {
  
  
 
@@ -31,6 +31,7 @@ const Cesta = ({ DatosCompra,rest,Add,eliminacesta }) => {
             </div>
           );
         })}
+        <div>________________________________________________________Total to pay : {total} eu</div>
       </div>
     </div>
   );
