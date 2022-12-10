@@ -1,6 +1,9 @@
 import React from "react";
 import img from "./Martin.png";
+import link from "./linkedin.jpg";
+import facebook from "./Facebook.png";
 import { Countdown } from "./Count";
+
 const About = () => {
    return (
     <div>
@@ -8,7 +11,23 @@ const About = () => {
         Soy Reservista de la Armada Española, desde que cuento con algo mas de
         tiempo. He realizado varios cursos, y éste de programación y desarrollo web,
         me ha encantado.
-      </span>
+        <div style={{display:"block"}}>
+      <a href="https://www.linkedin.com/in/leonardo-hermida-831409250/"target="_blank" rel="noopener noreferrer"><img style={{
+          display: "inline",
+          marginLeft:"10px",
+          width: "50px",
+          height: "50px",
+          
+        }}src={link} alt="Linkdn"/></a>
+         <a href="https://www.facebook.com/lhercas"target="_blank" rel="noopener noreferrer"><img style={{
+          display: "inline",
+          marginLeft:"10px",
+          width: "50px",
+          height: "50px",
+         
+        }}src={facebook} alt="Linkdn"/></a>
+        </div>
+            </span>
       <h3>
         Agradesco en especial al Instructor del OpenBootcamp, por su Curso React
         Intermedio
