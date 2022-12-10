@@ -127,16 +127,38 @@ button:active {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .carrito {
-  font-size: 35px;
-  margin-left: auto;
+  font-size: 30px;
+  margin-left: 5px;
+  text-decoration-line: none;
   
-  justify-content: right;
 }
 .Feliz {
   font-family: fantasy;
   font-size: 50px;
+}  
+  .aside {
+    background-color: rgb(193, 193, 238); 
+    background-image: url('/public/img/nube.webp') ;
+    background-size: contain;
+  }
+
   
+  .miniatura {
+    font-size: 10px;
+    border-style: solid;
+    border-color: black;
+    border-radius: 20px;
+    text-decoration-line: none;
     
+  }
+  .Link {
+    text-decoration-line: none;
+    font-size: 20px;
+    font-family: sans-serif;
+  }
+  .about {
+    text-decoration-line: none;
+    font-size: 20px;
   }
 @media only screen and (max-width: 600px) {
 

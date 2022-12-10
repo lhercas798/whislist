@@ -1,6 +1,6 @@
 import React from "react";
 
-const Inventario = ({ inicial, deseo, elimina }) => {
+const Inventario = ({ inicial, deseo, elimina,addCest }) => {
   return (
     <div className="contenedor">
       {inicial.map((item, index) => {
@@ -18,12 +18,17 @@ const Inventario = ({ inicial, deseo, elimina }) => {
               <h3>Price: {item.price} eu</h3>
 
               <button
+                onClick={()=>addCest(item,index)}
+              >
+                 Add to Cart🛒
+              </button>
+              {/* <button
                 onClick={
                   item.whish ? () => elimina(item, index) : () => deseo(index)
                 }
               >
                 {item.whish ? "🖤 Remove" : "💝Add to Whishlist"}
-              </button>
+              </button> */}
             </div>
           </div>
         );

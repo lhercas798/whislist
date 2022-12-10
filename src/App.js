@@ -1,3 +1,4 @@
+/* eslint-disable no-lone-blocks */
 /* eslint-disable no-unused-expressions */
 import React, { useState } from "react";
 import "./App.css";
@@ -6,7 +7,7 @@ import Inventario from "./component/inventario";
 import NotFoundPage from "./component/404/NotFoundPage.jsx";
 import WhishList from "./component/WhishList";
 import About from "./component/about/About";
-
+import  Cesta  from "./component/Cesta";
 
 function App() {
   const initial = [
@@ -14,6 +15,7 @@ function App() {
       id: 1,
       name: "Adidas Running",
       description: "running shoes",
+      items:1,
       stock: false,
       imagen: "adidas2.jpeg",
       price: 34,
@@ -23,6 +25,7 @@ function App() {
       id: 2,
       name: "Nike model b",
       description: "running shoes",
+      items :1,
       stock: true,
       imagen: "nike2.jpeg",
       price: 44,
@@ -32,6 +35,7 @@ function App() {
       id: 3,
       name: "Adidas Speed",
       description: "running shoes",
+      items:1,
       stock: true,
       imagen: "adidas.jpeg",
       price: 48,
@@ -41,6 +45,7 @@ function App() {
       id: 4,
       name: "Nike ",
       description: "running shoes",
+      items:1,
       stock: true,
       imagen: "nike.jpeg",
       price: 44,
@@ -50,7 +55,8 @@ function App() {
 
   const [state, setState] = useState([]);
   const [shoes, setShoes] = useState(initial);
-
+  // const [tempCesta,setTempCesta]=useState(initial)
+  const [cesta, setCesta] = useState([]);
   const Elimina = (item, index) => {
     const tempProduct = [...state];
     tempProduct.splice(index, 1);
@@ -79,35 +85,58 @@ function App() {
     state.push(shoes[index]);
     setShoes([...shoes]);
   }
-  console.log(state);
+  const AddToBuy = (item,index) => {
+   
+    {
+      cesta.includes(shoes[index]) ? AddItems(item) : AddCesta(index);
+     
+    
+    }
+  };
+  function AddItems(item,index){
+    const index2= cesta.indexOf(item)
+    cesta[index2].items++; 
+
+setCesta([...cesta]);
+  }
+  function AddCesta(index) {
+    
+    cesta.push(shoes[index]);
+    // setTempCesta([...cesta]);
+  }
+  let num=15;
   return (
     <Router>
-      <aside>
+      <aside className="aside">
         <span className="Feliz" >
-          Feliz 2023
+          🎁Feliz 2023✨
         </span>
-        <Link to="/" style={{ fontFamily: "sans-serif", fontSize: "20px" }}>
+        <Link to="/" className='Link'>
           ||HOME|
         </Link>
         <Link
-          to="WhishList"
-          style={{ fontFamily: "sans-serif", fontSize: "20px" }}
+          to="WhishList" className="Link"
+          
         >
           |WhishList|
         </Link>
-        <Link className="about" to="About" style={{ fontFamily: "sans-serif", fontSize: "20px" }}>
+        <Link className="about" to="About" >
           |About||
         </Link>
-        <Link className="carrito">🛒</Link>
+        <Link className="carrito" to="Compra">Cart🛒<span className="miniatura">{num}</span></Link>
       </aside>
       <Routes>
         <Route
           path="/"
           element={
-            <Inventario inicial={shoes} deseo={Deseos} elimina={Elimina2} />
+            <Inventario inicial={shoes} deseo={Deseos} elimina={Elimina2} addCest={AddToBuy}  />
           }
         />
         <Route path="*" element={<NotFoundPage />} />
+        <Route
+          path="/Compra"
+          element={<Cesta DatosCompra={cesta} />}
+        />
         <Route
           path="/WhishList"
           element={<WhishList Data={state} elimina={Elimina} />}
