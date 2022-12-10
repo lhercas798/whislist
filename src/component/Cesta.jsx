@@ -3,30 +3,30 @@ import React from "react";
 const Cesta = ({ DatosCompra }) => {
  
  
-let num=50;
+
 
   
  
-  function myFunc(item,index,num) {
+  function myFunc(item,index) {
     return (<div>{item.price*item.items}</div>);}
   return (
     <div>
-    <span>{'mm,'+ num}</span>
+    
   
-      <div className="contenedor">
+      <div className="contenedorCesta">
         {DatosCompra.map((item, index) => {
           const num = item.price * item.items;
           
           return (
-            <div key={index} className="card">
+            <div key={index} className="contenedorCesta">
               <img
                 style={{ width: "50px", height: "50px" }}
                 src={`/img/${item.imagen}`}
                 alt=""
               />
-              <span> Cantidad: {item.items}</span>
-              <span> Precio Unidad: {item.price} eu </span>
-              <span> A Pagar : {num} eu</span>
+              <span> Units: {item.items}</span>
+              <span> Unit price: {item.price} eu </span>
+              <span> to Pay : {num} eu</span>
               
             </div>
           );
