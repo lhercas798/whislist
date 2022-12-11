@@ -198,10 +198,11 @@ margin-top: 10px;
   .ventana2{
     position: absolute;
     margin-left: 50%;
-    width: 200px;
-    height:200px;
-    /* border-style: solid; */
+    width:fit-content;
+    min-height: 100px; 
+    height:max-content;
     background-color: white;
+    padding: 20px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
   }
 @media only screen and (max-width: 600px) {

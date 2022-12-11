@@ -150,8 +150,8 @@ const changeStyleOut = () => {
         <Link className="about" to="About">
           |About||
         </Link>
-        <Link className="carrito" to="Compra">
-          Cart🛒<span className="miniatura" onMouseOut={()=>{changeStyleOut()}} onMouseOver={()=>{changeStyle()}}>{num===0? 0:num}</span><div className={style}>{cesta.map((item, index) => {
+        <Link onMouseOut={()=>{changeStyleOut()}} onMouseOver={Total>0? ()=>{changeStyle()}:null} className="carrito" to="Compra">
+          Cart🛒<span className="miniatura" onMouseOut={()=>{changeStyleOut()}} onMouseOver={Total>0? ()=>{changeStyle()}:null}>{num===0? 0:num}</span><div className={style}>{cesta.map((item, index) => {
           const num = item.price * item.items;
 
           return (
