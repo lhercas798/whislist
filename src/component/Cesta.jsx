@@ -1,14 +1,6 @@
 import React from "react";
 
 const Cesta = ({ DatosCompra,rest,Add,eliminacesta,total }) => {
- 
- 
-
-
-  
- 
-  function myFunc(item,index) {
-    return (<div>{item.price*item.items}</div>);}
   return (
     <div>
     
@@ -24,14 +16,18 @@ const Cesta = ({ DatosCompra,rest,Add,eliminacesta,total }) => {
                 src={`/img/${item.imagen}`}
                 alt=""
               />
-              <span> Unit price: {item.price} eu </span>
-               Units: <button onClick={()=>rest(item)}><div>-</div></button><button>{item.items}</button><button onClick={()=>Add(item)}><div > + </div></button>
-              <span> to Pay : {num} eu</span>
+              <span className="total"> Unit price: {item.price} eu </span>
+               <button onClick={()=>rest(item)}><div>-</div></button><button className="cestaItems">{item.items}</button><button onClick={()=>Add(item)}><div > + </div></button>
+              <span className="total">  : {num} eu</span>
               <button onClick={()=>eliminacesta(item,index)}><div > 🗑️ </div></button>
             </div>
           );
         })}
-        <div>{total>0 ? `________________________________________________________Total to pay : ${total} eu`:'🎁Choose Your Gifth🎁'}</div>
+        <div className="recibo">
+        <div className="total">{total>0 ? `Total  : ${total} eu`:'🎁Choose Your Gifth🎁'}</div>
+        <div className="total">{total>0 ? `Iva(21%): ${Math.trunc(total*21/100)} eu`:null    }</div>
+        <div className="total">{total>0 ?`Total to Pay: ${Math.trunc(total*21/100+total)} eu` :null   }</div>
+        </div>
       </div>
     </div>
   );
