@@ -27,7 +27,7 @@ const Inventario = ({ inicial, deseo, elimina,addCest }) => {
                   item.whish ? () => elimina(item, index) : () => deseo(index)
                 }
               >
-                {item.whish ? "🖤 Remove" : "💝Add to Whishlist"}
+                {item.whish ? "🖤" : "💝"}
               </button> */}
             </div>
           </div>

@@ -127,16 +127,24 @@ function App() {
   const [style, setStyle] = useState("ventana");
 
   const initialValue = 0;
-  let num = cesta.map(cesta =>cesta.items).reduce( (accumulator, currentValue) => accumulator + currentValue,
-  initialValue)
- let Total= cesta.map(cesta=>cesta.items*cesta.price).reduce((accumulator, currentValue) => accumulator + currentValue,
- initialValue)
- const changeStyle = () => {
+  let num = cesta
+    .map((cesta) => cesta.items)
+    .reduce(
+      (accumulator, currentValue) => accumulator + currentValue,
+      initialValue
+    );
+  let Total = cesta
+    .map((cesta) => cesta.items * cesta.price)
+    .reduce(
+      (accumulator, currentValue) => accumulator + currentValue,
+      initialValue
+    );
+  const changeStyle = () => {
     setStyle("ventana2");
-};
-const changeStyleOut = () => {
-  setStyle("ventana");
-};
+  };
+  const changeStyleOut = () => {
+    setStyle("ventana");
+  };
   return (
     <Router>
       <aside className="aside">
@@ -150,26 +158,65 @@ const changeStyleOut = () => {
         <Link className="about" to="About">
           |About||
         </Link>
-        <Link onMouseOut={()=>{changeStyleOut()}} onMouseOver={Total>0? ()=>{changeStyle()}:null} className="carrito" to="Compra">
-          Cart🛒<span className="miniatura" onMouseOut={()=>{changeStyleOut()}} onMouseOver={Total>0? ()=>{changeStyle()}:null}>{num===0? 0:num}</span><div className={style}>{cesta.map((item, index) => {
-          const num = item.price * item.items;
+        <Link
+          onMouseOut={() => {
+            changeStyleOut();
+          }}
+          onMouseOver={
+            Total > 0
+              ? () => {
+                  changeStyle();
+                }
+              : null
+          }
+          className="carrito"
+          to="Compra"
+        >
+          Cart🛒
+          <span
+            className="miniatura"
+            onMouseOut={() => {
+              changeStyleOut();
+            }}
+            onMouseOver={
+              Total > 0
+                ? () => {
+                    changeStyle();
+                  }
+                : null
+            }
+          >
+            {num === 0 ? 0 : num}
+          </span>
+          <div className={style}>
+            {cesta.map((item, index) => {
+              const num = item.price * item.items;
 
-          return (
-            <div key={index} className="contenedorCesta">
-              <img
-                style={{ width: "20px", height: "20px" }}
-                src={`/img/${item.imagen}`}
-                alt=""
-              />
-              <span className="totalMini"> Unit price: {item.price} eu </span>
-            
-              <button className="cestaItems">{item.items}</button>
-              
-              <span className="totalMini"> : {num} eu</span>
-             
-            </div>
-          );
-        })}</div>
+              return (
+                <div key={index} className="contenedorCesta">
+                  <img
+                    style={{ width: "20px", height: "20px" }}
+                    src={`/img/${item.imagen}`}
+                    alt=""
+                  />
+                  <span className="totalMini">
+                    {" "}
+                    Unit price: {item.price} eu{" "}
+                  </span>
+
+                  <button className="cestaItems">{item.items}</button>
+
+                  <span className="totalMini"> : {num} eu</span>
+                
+                </div>
+              );
+            })}
+            <div className="total">
+            {Total > 0
+              ? `Total + (IVA): ${Math.trunc((Total * 21) / 100 + Total)} eu`
+              : null}
+          </div>
+          </div>
         </Link>
       </aside>
       <Routes>
