@@ -212,3 +212,29 @@ button:active {
     display: none;
   }
 }
+
+@media only screen and (max-width: 780px) {
+  .ventana2 {
+    position: absolute;
+    margin-left: 55%;
+    width: fit-content;
+    min-height: 100px;
+    height: max-content;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+}
+
+@media only screen and (min-width: 300px) {
+  .ventana2 {
+    position: absolute;
+    margin-left: 45%;
+    width: fit-content;
+    min-height: 100px;
+    height: max-content;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  }
+}
