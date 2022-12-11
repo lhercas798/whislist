@@ -207,15 +207,14 @@ function App() {
                   <button className="cestaItems">{item.items}</button>
 
                   <span className="totalMini"> : {num} eu</span>
-                
                 </div>
               );
             })}
             <div className="total">
-            {Total > 0
-              ? `Total + (IVA): ${Math.trunc((Total * 21) / 100 + Total)} eu`
-              : null}
-          </div>
+              {Total > 0
+                ? `Total + (IVA): ${Math.trunc((Total * 21) / 100 + Total)} eu`
+                : null}
+            </div>
           </div>
         </Link>
       </aside>
