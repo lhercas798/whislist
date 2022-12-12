@@ -150,13 +150,13 @@ function App() {
       <aside className="aside">
         <span className="Feliz">🎁Feliz 2023✨</span>
         <Link to="/" className="Link">
-          ||HOME|
+          Home
         </Link>
         <Link to="WhishList" className="Link">
-          |WhishList|
+        &nbsp;WhishList
         </Link>
         <Link className="about" to="About">
-          |About||
+        &nbsp; About
         </Link>
         <Link
           onMouseOut={() => {
@@ -172,7 +172,7 @@ function App() {
           className="carrito"
           to="Compra"
         >
-          Cart🛒
+           &nbsp;Cart🛒
           <span
             className="miniatura"
             onMouseOut={() => {
