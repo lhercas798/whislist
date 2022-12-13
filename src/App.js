@@ -29,7 +29,7 @@ function App() {
       items: 0,
       stock: true,
       imagen: "nike2.jpeg",
-      price: 44,
+      price: 46,
       whish: false,
     },
     {
@@ -69,7 +69,7 @@ function App() {
       items: 0,
       stock: true,
       imagen: "-reebok-.jpg",
-      price: 49,
+      price: 45,
       whish: false,
     },
     {
