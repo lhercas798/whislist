@@ -24,7 +24,7 @@ const Cesta = ({ DatosCompra, rest, Add, eliminacesta, total }) => {
                 <div> + </div>
               </button>
               <span className="total"> : {num} eu</span>
-              <Button variant="contained" onClick={() => eliminacesta(item, index)}>
+              <Button variant="contained" size="small" onClick={() => eliminacesta(item, index)}>
                 <div> 🗑️ </div>
               </Button>
             
