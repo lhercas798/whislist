@@ -19,7 +19,7 @@ export function Countdown() {
   return (
     <div>
       <h2>
-        Faltan : {count[2] < 10 ? `0${count[2]}` : count[2]} Días: &nbsp;
+        {count[2] < 10 ? `0${count[2]}` : count[2]} Días: &nbsp;
         {count[3] < 10 ? `0${count[3]}` : count[3]} Horas: &nbsp;
         {count[4] < 10 ? `0${count[4]}` : count[4]} Minutos: &nbsp;
         {count[5] < 10 ? `0${count[5]}` : count[5]} Segundos.

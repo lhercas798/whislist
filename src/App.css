@@ -199,6 +199,7 @@ button:active {
   background-image: url(./component/about/depositphotos_82602352-stock-illustrat.jpg);
   background-size: contain;
   background-repeat: repeat;
+  text-align: center;
 }
 .FondoCesta {
   background-image: url(./component/about/cesta.jpg);
