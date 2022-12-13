@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Button from '@mui/material/Button';
 const Cesta = ({ DatosCompra, rest, Add, eliminacesta, total }) => {
   return (
     <div className="FondoCesta">
@@ -23,9 +24,10 @@ const Cesta = ({ DatosCompra, rest, Add, eliminacesta, total }) => {
                 <div> + </div>
               </button>
               <span className="total"> : {num} eu</span>
-              <button onClick={() => eliminacesta(item, index)}>
+              <Button variant="contained" onClick={() => eliminacesta(item, index)}>
                 <div> 🗑️ </div>
-              </button>
+              </Button>
+            
             </div>
           );
         })}
