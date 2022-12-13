@@ -3,8 +3,10 @@ import React from "react";
 const WhishList = ({ Data, elimina }) => {
   return (
     <div>
-      <h1 style={{textAlign:'center'}}>⭐WhisList⭐</h1>
+      <h1 style={{ textAlign: "center" }}>⭐WhisList⭐</h1>
+      {Data.length>0 ?
       <div style={{ minHeight: "300px" }} className="contenedor">
+       
         {Data.map((item, index) => {
           return (
             <>
@@ -27,7 +29,7 @@ const WhishList = ({ Data, elimina }) => {
             </>
           );
         })}
-      </div>
+      </div>:<div style={{ textAlign: "center",fontSize:'50px' }}>💝Add Your Gift💝</div>}
     </div>
   );
 };
