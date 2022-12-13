@@ -10,11 +10,11 @@ const Cesta = ({ DatosCompra, rest, Add, eliminacesta, total }) => {
           return (
             <div key={index} className="contenedorCesta">
               <img
-                style={{ width: "50px", height: "50px" }}
+                style={{ width: "70px", height: "70px" }}
                 src={`/img/${item.imagen}`}
                 alt=""
               />
-              <span className="total"> Unit price: {item.price} eu </span>
+              <span className="total">  Price: {item.price} eu </span>
               <button onClick={() => rest(item)}>
                 <div>-</div>
               </button>

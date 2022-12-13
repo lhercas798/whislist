@@ -195,7 +195,7 @@ function App() {
               return (
                 <div key={index} className="contenedorCesta">
                   <img
-                    style={{ width: "20px", height: "20px" }}
+                    style={{ width: "40px", height: "40px" }}
                     src={`/img/${item.imagen}`}
                     alt=""
                   />
