@@ -1,5 +1,5 @@
 import React from "react";
-
+import Button from '@mui/material/Button';
 const Inventario = ({ inicial, deseo, elimina, addCest }) => {
   return (
     <div className="contenedor">
@@ -22,9 +22,9 @@ const Inventario = ({ inicial, deseo, elimina, addCest }) => {
               <h3>Stock: {item.stock ? "yes" : "No"}</h3>
               <h3>Price: {item.price} eu</h3>
 
-              <button onClick={() => addCest(item, index)}>
+              <Button variant="contained" onClick={() => addCest(item, index)}>
                 Add to Cart🛒
-              </button>
+              </Button>
             </div>
           </div>
         );

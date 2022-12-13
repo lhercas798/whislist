@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import Button from '@mui/material/Button';
 const WhishList = ({ Data, elimina }) => {
   return (
     <div>
@@ -21,9 +22,9 @@ const WhishList = ({ Data, elimina }) => {
                   <h2>{item.name}</h2>
 
                   <h3>Price: {item.price} eu</h3>
-                  <button onClick={() => elimina(item, index)}>
+                  <Button variant="contained" onClick={() => elimina(item, index)}>
                     {"🗑️Remove"}
-                  </button>
+                  </Button>
                 </div>
               </div>
             </>
