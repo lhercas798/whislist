@@ -177,7 +177,7 @@ button:active {
 }
 .ventana {
   position: absolute;
-  margin-left: 50%;
+  margin-left: 35%;
   width: 200px;
   height: 200px;
   border-style: solid;
@@ -185,7 +185,7 @@ button:active {
 }
 .ventana2 {
   position: absolute;
-  margin-left: 50%;
+  margin-left: 35%;
   width: fit-content;
   min-height: 100px;
   height: max-content;
@@ -202,6 +202,16 @@ button:active {
   background-image: url(./component/about/cesta.jpg);
   background-size: contain;
 }
+.reloj{
+  /* display:inline-table; */
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+
+}
+.relojCont{
+  display:grid;
+  grid-template-columns: 140px 30px;
+  
+}
 @media only screen and (max-width: 600px) {
   .about {
     display: none;
@@ -213,10 +223,10 @@ button:active {
   }
 }
 
-@media only screen and (max-width: 780px) {
+@media only screen and (max-width: 1180px) {
   .ventana2 {
-    position: absolute;
-    margin-left: 55%;
+   
+    margin-left: 50%;
     width: fit-content;
     min-height: 100px;
     height: max-content;
@@ -226,15 +236,5 @@ button:active {
   }
 }
 
-@media only screen and (min-width: 300px) {
-  .ventana2 {
-    position: absolute;
-    margin-left: 45%;
-    width: fit-content;
-    min-height: 100px;
-    height: max-content;
-    background-color: white;
-    padding: 20px;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  }
-}
+
+
