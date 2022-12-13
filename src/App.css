@@ -115,13 +115,12 @@ button:active {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .carrito {
-  font-size: 25px;
-  margin-left: 5px;
+  font-size: 28px;
   text-decoration-line: none;
 }
 .Feliz {
   font-family: fantasy;
-  font-size: 50px;
+  font-size: 40px;
 }
 .aside {
   background-image: url("/public/img/nube.webp");
@@ -130,14 +129,16 @@ button:active {
 
 .miniatura {
   font-size: 15px;
-  border-style: solid;
+  border-style:double;
   border-color: black;
   border-radius: 20px;
   text-decoration-line: none;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .Link {
   text-decoration-line: none;
   font-size: 20px;
+  font-weight: bold;
   font-family: sans-serif;
 }
 .about {
@@ -176,7 +177,7 @@ button:active {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
 }
 .ventana {
-  position: absolute;
+ 
   margin-left: 35%;
   width: 200px;
   height: 200px;
@@ -184,7 +185,7 @@ button:active {
   display: none;
 }
 .ventana2 {
-  position: absolute;
+ position:absolute;
   margin-left: 35%;
   width: fit-content;
   min-height: 100px;
@@ -192,6 +193,7 @@ button:active {
   background-color: white;
   padding: 20px;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
 .AboutFondo {
   background-image: url(./component/about/depositphotos_82602352-stock-illustrat.jpg);
@@ -225,7 +227,7 @@ button:active {
 
 @media only screen and (max-width: 1180px) {
   .ventana2 {
-   
+   position:absolute;
     margin-left: 50%;
     width: fit-content;
     min-height: 100px;

@@ -172,7 +172,7 @@ function App() {
           className="carrito"
           to="Compra"
         >
-           &nbsp;Cart🛒
+           &nbsp;🛒
           <span
             className="miniatura"
             onMouseOut={() => {
@@ -186,7 +186,7 @@ function App() {
                 : null
             }
           >
-            {num === 0 ? 0 : num}
+            {num < 10 ? '0'+num : num}
           </span>
           <div className={style}>
             {cesta.map((item, index) => {
