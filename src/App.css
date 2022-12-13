@@ -186,7 +186,7 @@ button:active {
 }
 .ventana2 {
  position:absolute;
-  margin-left: 35%;
+  margin-left: 30%;
   width: fit-content;
   min-height: 100px;
   height: max-content;
@@ -228,7 +228,7 @@ button:active {
 @media only screen and (max-width: 1180px) {
   .ventana2 {
    position:absolute;
-    margin-left: 50%;
+    margin-left: 45%;
     width: fit-content;
     min-height: 100px;
     height: max-content;
