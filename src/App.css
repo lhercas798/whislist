@@ -186,7 +186,7 @@ button:active {
 }
 .ventana2 {
  position:absolute;
-  margin-left: 30%;
+  margin-left: 20%;
   width: fit-content;
   min-height: 100px;
   height: max-content;
