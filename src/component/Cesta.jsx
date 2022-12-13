@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const Cesta = ({ DatosCompra, rest, Add, eliminacesta, total }) => {
   return (
     <div className="FondoCesta">
@@ -31,7 +31,9 @@ const Cesta = ({ DatosCompra, rest, Add, eliminacesta, total }) => {
         })}
         <div className="recibo">
           <div className="total">
-            {total > 0 ? `Total  : ${total} eu` : "🎁Choose Your Gifth🎁"}
+            {total > 0 ? `Total  : ${total} eu` : <Link to="/" className="Link">
+          <div style={{ textAlign: "center",fontSize:'50px' }}>"🎁Choose Your Gifth🎁"</div>
+          </Link>}
           </div>
           <div className="total">
             {total > 0

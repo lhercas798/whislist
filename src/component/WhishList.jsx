@@ -1,5 +1,5 @@
 import React from "react";
-
+import { Link } from "react-router-dom";
 const WhishList = ({ Data, elimina }) => {
   return (
     <div>
@@ -29,8 +29,11 @@ const WhishList = ({ Data, elimina }) => {
             </>
           );
         })}
-      </div>:<div style={{ textAlign: "center",fontSize:'50px' }}>💝Add Your Gift💝</div>}
+      </div>:<Link to="/" className="Link">
+          <div style={{ textAlign: "center",fontSize:'50px' }}>💝Add Your Gift💝</div>
+          </Link>}
     </div>
+      
   );
 };
 
