@@ -10,3 +10,13 @@ realizado con Herramientas/Librerias:
 
 Despliegue:
 https://whislist-lhercas798.vercel.app/
+## FrontEnd
+- HTML
+- CSS Tailwind
+- Javascript
+- React js
+- React Query
+- React Router Dom
+- Axios
+- Formik
+- Yup
