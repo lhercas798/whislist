@@ -1,6 +1,6 @@
 # Whislist
 Openbootcamp Proyect ,Lista de Deseos
-Proyecto a realizar en el mes de diciembre de 2022, en el OpenBootCamp.
+Proyecto  realizado en el mes de diciembre de 2022, en el OpenBootCamp.
 ## Solo FrontEnd ,Herramientas/Librerias: 
 - HTML
 - CSS
