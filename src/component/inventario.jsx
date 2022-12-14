@@ -1,5 +1,6 @@
 import React from "react";
-import Button from '@mui/material/Button';
+import Button from "@mui/material/Button";
+import { color } from "@mui/system";
 const Inventario = ({ inicial, deseo, elimina, addCest }) => {
   return (
     <div className="contenedor">
@@ -24,6 +25,9 @@ const Inventario = ({ inicial, deseo, elimina, addCest }) => {
 
               <Button variant="contained" onClick={() => addCest(item, index)}>
                 Add to Cart🛒
+                <span style={{ fontSize: "11px" }}>
+                  {item.items > 0 ? item.items : null}
+                </span>
               </Button>
             </div>
           </div>

@@ -75,6 +75,9 @@ body {
   /* background-image: url('/public/img/whish.jpg'); */
   background-color: rgba(62, 3, 3, 0.2);
 }
+.card-w:hover{
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
 .card:hover {
   box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
