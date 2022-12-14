@@ -1,22 +1,13 @@
 # Whislist
 Openbootcamp Proyect ,Lista de Deseos
 Proyecto a realizar en el mes de diciembre de 2022, en el OpenBootCamp.
-Solo Front End.
-realizado con Herramientas/Librerias:
--React 
--CSS
--@mui/material
--React router doom.
-
-Despliegue:
-https://whislist-lhercas798.vercel.app/
-## FrontEnd
+## Solo FrontEnd ,Herramientas/Librerias: 
 - HTML
-- CSS Tailwind
+- CSS
 - Javascript
 - React js
-- React Query
 - React Router Dom
-- Axios
-- Formik
-- Yup
+- Mui/Materials
+
+# Despliegue:
+https://whislist-lhercas798.vercel.app/
