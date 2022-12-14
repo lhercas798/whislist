@@ -15,5 +15,7 @@ https://whislist-lhercas798.vercel.app/
 # Screenhosts
 ## Home
 ![home](https://user-images.githubusercontent.com/59142978/207706392-3d0386cf-1f9a-49fe-8594-0988e50b1bf4.png)
+## About
+![About](https://user-images.githubusercontent.com/59142978/207706722-32ba25c1-9344-4c9a-a018-3d7e941a78bf.png)
 
-![image](https://user-images.githubusercontent.com/59142978/207706392-3d0386cf-1f9a-49fe-8594-0988e50b1bf4.png)
+
