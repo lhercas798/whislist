@@ -9,6 +9,7 @@ import NotFoundPage from "./component/404/NotFoundPage.jsx";
 import WhishList from "./component/WhishList";
 import About from "./component/about/About";
 import Cesta from "./component/Cesta";
+import Search from "./component/Search";
 
 function App() {
   const initial = [
@@ -140,7 +141,9 @@ function App() {
       state.includes(shoes[index]) ? null : Add(index);
     }
   };
-  function Add(index) {
+  
+  function Add(item) {
+    let index=shoes.indexOf(item)
     shoes[index].whish = true;
     state.push(shoes[index]);
     setShoes([...shoes]);
@@ -150,17 +153,30 @@ function App() {
    * Funciones para Carrito
    *
    */
+  // const AddToBuy = (item, index) => {
+  //   {
+  //     cesta.includes(shoes[index]) ? AddItems(index,item) : AddCesta(index,item);
+  //   }
+  // };
   const AddToBuy = (item, index) => {
     {
-      cesta.includes(shoes[index]) ? AddItems(item) : AddCesta(index);
+      cesta.includes(item) ? AddItems(index,item) : AddCesta(index,item);
     }
   };
-  function AddItems(item, index) {
+  
+  function AddItems(index, item) {
     const index2 = cesta.indexOf(item);
     cesta[index2].items++;
 
     setCesta([...cesta]);
   }
+  function AddItems2(item) {
+    const index2 = cesta.indexOf(item);
+    cesta[index2].items++;
+
+    setCesta([...cesta]);
+  }
+
   function RestItems(item, index) {
     const index2 = cesta.indexOf(item);
     if (cesta[index2].items > 0) {
@@ -170,13 +186,15 @@ function App() {
     }
     setCesta([...cesta]);
   }
-  function AddCesta(index) {
-    shoes[index].items++;
+  function AddCesta(index,item) {
+    let index2=shoes.indexOf(item)
+    shoes[index2].items++;
     
-    cesta.push(shoes[index]);
+    cesta.push(shoes[index2]);
 
     setCesta([...cesta]);
   }
+ 
   const EliminaCesta = (item, index) => {
     const tempCesta = [...cesta];
     let index2 = shoes.indexOf(item);
@@ -206,16 +224,17 @@ function App() {
   const changeStyleOut = () => {
     setStyle("ventana");
   };
-// const[tempshoes,setTempShoes]=useState(shoes);
-//   const handleSearch = (event) => {
-//     let value = event.target.value.toLowerCase();
-//     let result = [];
-//     console.log(value);
-//     result = shoes.filter((shoes) => {
-//       return shoes.name.toLowerCase().search(value) !== -1;
-//     });
-//     if(result.length > 0 ) {setTempShoes(shoes); setShoes(result)} else {setShoes(tempshoes);}
-//   };
+const[tempshoes,setTempShoes]=useState(shoes);
+  const handleSearch = (event) => {
+    let value = event.target.value.toLowerCase();
+    let result = [];
+    console.log(value);
+    result = shoes.filter((shoes) => {
+      return shoes.name.toLowerCase().search(value) !== -1;
+    });
+    setTempShoes(result);
+    // if(result.length > 0 ) {setTempShoes(shoes); setShoes(result)} else {setShoes(tempshoes);}
+  };
 
   return (
     <Router>
@@ -294,10 +313,10 @@ function App() {
             </div>
           </div>
         </Link>
-        {/* <Link to="/">
+        <Link to="/search">
           <label style={{marginLeft:'5px'}}>🔎:</label>
           <input placeholder="Search..." style={{borderRadius:'5px',width:'50px'}}type="text" onChange={(event) => handleSearch(event)} />
-        </Link> */}
+        </Link>
       </aside>
       <Routes>
         <Route
@@ -311,6 +330,17 @@ function App() {
             />
           }
         />
+        <Route
+          path="/search"
+          element={
+            <Search
+              Inicial={tempshoes}
+              Deseo={Deseos}
+              Elimina={Elimina2}
+              AddCest={AddToBuy}
+            />
+          }
+        />
         <Route path="*" element={<NotFoundPage />} />
         <Route path="/search" element={<NotFoundPage />} />
         <Route
@@ -319,7 +349,7 @@ function App() {
             <Cesta
               DatosCompra={cesta}
               rest={RestItems}
-              Add={AddItems}
+              Add={AddItems2}
               eliminacesta={EliminaCesta}
               total={Total}
             />

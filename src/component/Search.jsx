@@ -1,17 +1,17 @@
 import React from "react";
 import Button from "@mui/material/Button";
 
-const Inventario = ({ inicial, deseo, elimina, addCest }) => {
+const Search = ({ Inicial, Deseo, Elimina, AddCest }) => {
   return (
     <div className="contenedor">
-      {inicial.map((item, index) => {
+      {Inicial.map((item, index) => {
         return (
           <div key={index} className="card">
             <img src={`/img/${item.imagen}`} alt="" />
             <span
               className="icono"
               onClick={
-                item.whish ? () => elimina(item, index) : () => deseo(item,index)
+                item.whish ? () => Elimina(item, index) : () => Deseo(item,index)
               }
             >
               {item.whish ? "💝" : "🖤"}
@@ -23,7 +23,7 @@ const Inventario = ({ inicial, deseo, elimina, addCest }) => {
               <h3>Stock: {item.stock ? "Yes" : <span style={{color:'red', fontSize:'15px'}}>No</span>}</h3>
               <h3>Price: {item.price} eu</h3>
 
-             {item.stock ? (<Button variant="contained" onClick={() => addCest(item, index)}>
+             {item.stock ? (<Button variant="contained" onClick={() => AddCest(item, index)}>
                 Add to Cart🛒
                 <span style={{ fontSize: "11px" }}>
                   {item.items > 0 ? item.items : null} 
@@ -37,4 +37,4 @@ const Inventario = ({ inicial, deseo, elimina, addCest }) => {
   );
 };
 
-export default Inventario;
+export default Search;
