@@ -25,8 +25,8 @@ const WhishList = ({ Data, elimina,toCest }) => {
                   <Button variant="contained" size='small'onClick={() => elimina(item, index)}>
                     {"🗑️Remove"}
                   </Button>
-                  {item.stock ? (<Button variant="contained" onClick={() => toCest(item, index)}>
-                Add to Cart🛒
+                  {item.stock ? (<Button variant="outlined" size="small" onClick={() => toCest(item, index)}>
+                buy🛒
                 <span style={{ fontSize: "11px" }}>
                   {item.items > 0 ? item.items : null} 
                 </span>
