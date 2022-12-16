@@ -172,6 +172,7 @@ function App() {
   }
   function AddCesta(index) {
     shoes[index].items++;
+    
     cesta.push(shoes[index]);
 
     setCesta([...cesta]);
@@ -205,23 +206,23 @@ function App() {
   const changeStyleOut = () => {
     setStyle("ventana");
   };
-
-  const handleSearch = (event) => {
-    let value = event.target.value.toLowerCase();
-    let result = [];
-    console.log(value);
-    result = shoes.filter((shoes) => {
-      return shoes.name.toLowerCase().search(value) !== -1;
-    });
-    result.length > 0 ? setShoes(result) : setShoes(initial);
-  };
+// const[tempshoes,setTempShoes]=useState(shoes);
+//   const handleSearch = (event) => {
+//     let value = event.target.value.toLowerCase();
+//     let result = [];
+//     console.log(value);
+//     result = shoes.filter((shoes) => {
+//       return shoes.name.toLowerCase().search(value) !== -1;
+//     });
+//     if(result.length > 0 ) {setTempShoes(shoes); setShoes(result)} else {setShoes(tempshoes);}
+//   };
 
   return (
     <Router>
       <aside
-        onClick={() => {
-          setShoes(initial);
-        }}
+        // onClick={() => {
+        //   setShoes(tempshoes);
+        // }}
         className="aside"
       >
         <span className="Feliz">🎁Feliz 2023✨</span>
@@ -293,10 +294,10 @@ function App() {
             </div>
           </div>
         </Link>
-        <Link to="/">
-          <label>🔎:</label>
-          <input style={{width:'50px'}}type="text" onChange={(event) => handleSearch(event)} />
-        </Link>
+        {/* <Link to="/">
+          <label style={{marginLeft:'5px'}}>🔎:</label>
+          <input placeholder="Search..." style={{borderRadius:'5px',width:'50px'}}type="text" onChange={(event) => handleSearch(event)} />
+        </Link> */}
       </aside>
       <Routes>
         <Route
