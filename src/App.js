@@ -205,18 +205,34 @@ function App() {
   const changeStyleOut = () => {
     setStyle("ventana");
   };
+
+  const handleSearch = (event) => {
+    let value = event.target.value.toLowerCase();
+    let result = [];
+    console.log(value);
+    result = shoes.filter((shoes) => {
+      return shoes.name.toLowerCase().search(value) !== -1;
+    });
+    result.length > 0 ? setShoes(result) : setShoes(initial);
+  };
+
   return (
     <Router>
-      <aside className="aside">
+      <aside
+        onClick={() => {
+          setShoes(initial);
+        }}
+        className="aside"
+      >
         <span className="Feliz">🎁Feliz 2023✨</span>
         <Link to="/" className="Link">
           Home
         </Link>
         <Link to="WhishList" className="Link">
-        &nbsp;WhishList
+          &nbsp;WhishList
         </Link>
         <Link className="about" to="About">
-        &nbsp; About
+          &nbsp; About
         </Link>
         <Link
           onMouseOut={() => {
@@ -232,7 +248,7 @@ function App() {
           className="carrito"
           to="Compra"
         >
-           &nbsp;🛒
+          &nbsp;🛒
           <span
             className="miniatura"
             onMouseOut={() => {
@@ -246,7 +262,7 @@ function App() {
                 : null
             }
           >
-            {num < 10 ? '0'+num : num}
+            {num < 10 ? "0" + num : num}
           </span>
           <div className={style}>
             {cesta.map((item, index) => {
@@ -277,11 +293,14 @@ function App() {
             </div>
           </div>
         </Link>
+        <Link to="/">
+          <label>🔎:</label>
+          <input style={{width:'50px'}}type="text" onChange={(event) => handleSearch(event)} />
+        </Link>
       </aside>
       <Routes>
         <Route
           path="/"
-          
           element={
             <Inventario
               inicial={shoes}
@@ -292,6 +311,7 @@ function App() {
           }
         />
         <Route path="*" element={<NotFoundPage />} />
+        <Route path="/search" element={<NotFoundPage />} />
         <Route
           path="/Compra"
           element={
