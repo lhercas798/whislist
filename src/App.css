@@ -165,7 +165,7 @@ button:active {
   text-decoration-line: none;
 }
 .total {
-  font-size: large;
+  font-size: small;
   text-align: right;
   margin-right:10px;
   

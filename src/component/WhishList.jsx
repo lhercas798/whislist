@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Button from '@mui/material/Button';
-const WhishList = ({ Data, elimina }) => {
+const WhishList = ({ Data, elimina,toCest }) => {
   return (
     <div>
       <h1 style={{ textAlign: "center" }}>⭐WhisList⭐</h1>
@@ -22,8 +22,11 @@ const WhishList = ({ Data, elimina }) => {
                   <h2>{item.name}</h2>
 
                   <h3>Price: {item.price} eu</h3>
-                  <Button variant="contained" onClick={() => elimina(item, index)}>
+                  <Button variant="contained" size='small'onClick={() => elimina(item, index)}>
                     {"🗑️Remove"}
+                  </Button>
+                  <Button variant="outlined" size="small" onClick={() => toCest(item, index)}>
+                    {"Buy🛒"}{item.items}
                   </Button>
                 </div>
               </div>

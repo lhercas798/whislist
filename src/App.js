@@ -357,7 +357,7 @@ const[tempshoes,setTempShoes]=useState(shoes);
         />
         <Route
           path="/WhishList"
-          element={<WhishList Data={state} elimina={Elimina} />}
+          element={<WhishList Data={state} elimina={Elimina}  toCest={AddToBuy}/>}
         />
         <Route path="/About" element={<About />} />
       </Routes>
