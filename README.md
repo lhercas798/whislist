@@ -14,13 +14,15 @@ https://whislist-lhercas798.vercel.app/
 
 # Screenhosts
 ## Home
-![home](https://user-images.githubusercontent.com/59142978/207706392-3d0386cf-1f9a-49fe-8594-0988e50b1bf4.png)
+[home]![image](https://user-images.githubusercontent.com/59142978/208188670-ae318f15-109c-4313-98d8-2ce4ab16675d.png)
 ## About
-![About](https://user-images.githubusercontent.com/59142978/207706722-32ba25c1-9344-4c9a-a018-3d7e941a78bf.png)
+[About]![image](https://user-images.githubusercontent.com/59142978/207706722-32ba25c1-9344-4c9a-a018-3d7e941a78bf.png)
 ## Cesta
-![Cesta](https://user-images.githubusercontent.com/59142978/207707067-77859815-168b-4a3c-b131-6ae8d5e0b042.png)
+[Cesta]![image](https://user-images.githubusercontent.com/59142978/208189014-237172a4-1be6-4aa2-b00b-dfb1abff8ac7.png)
 ## WhishList
-![WhishList](https://user-images.githubusercontent.com/59142978/207707311-46758bc1-2eaa-4abc-9266-ba1fe8e5afbb.png)
+[WhishList]![image](https://user-images.githubusercontent.com/59142978/208188927-7058a616-8e8f-460e-9a61-1d2cc7e66de0.png)
+## Search
+[Search]![image](https://user-images.githubusercontent.com/59142978/208189276-1779dc19-4f04-4d25-a947-dfad6dcab36e.png)
 
 
 
