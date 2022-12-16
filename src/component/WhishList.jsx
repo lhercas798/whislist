@@ -30,7 +30,7 @@ const WhishList = ({ Data, elimina,toCest }) => {
                 <span style={{ fontSize: "11px" }}>
                   {item.items > 0 ? item.items : null} 
                 </span>
-              </Button>):<Button variant="contained" disabled>'No stock'</Button> }
+              </Button>):<Button variant="contained" size="small" disabled>'No stock'</Button> }
                 </div>
               </div>
             </>
